@@ -57,6 +57,23 @@ sum += sum(arr[i]);
 return sum;
 }
 
+//5a) sumCols takes a 2D array that must be rectangular (all rows have the same length) and returns
+//a 1D array of int with each element being the sum of the individual columns of the 2D array.
+public static int[] sumCols(int[][] matrix)
+int[]switch = int[matrix.length];
+  for(int i=0; i< matrix.length; i++)
+  {
+    for(int j=0; j, matrix[1].length; j++)
+    {
+      switch[j][i] = matrix[i][j];
+    }
+  }
+  return sumRows(switch);
+}
+
+
+
+
 
 
 
