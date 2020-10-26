@@ -72,7 +72,6 @@ public static int[] sumCols(int[][] matrix)
 return out;
 }
 
-
 //5b) isRowMagic() takes a rectangular 2d array and returns true when each row has the same sum, and false otherwise.
 public static boolean isRowMagic(int[][] matrix) {
   boolean isMagic = true;
@@ -87,7 +86,7 @@ public static boolean isRowMagic(int[][] matrix) {
   return isMagic;
 }
 //5c) isColMagic()  takes a rectangular 2d array and  returns true when each column has the same sum, and false otherwise.
-public static boolean isColumnMagic(int[][] matrix) {
+public static boolean isColMagic(int[][] matrix) {
 for(int i=0; i<matrix[1].length-1; i++)
 {
   if(ArrayOps.sumCols(matrix)[0]!=ArrayOps.sumCols(matrix)[i])
