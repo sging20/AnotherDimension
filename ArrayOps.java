@@ -1,7 +1,7 @@
 public class ArrayOps{
 
 //4a) sum() takes an array of int, and returns a sum of the individual values in the array.
-public static int[] sum(int[] arr)
+public static int sum(int[] arr)
 {
   int sum= 0;
   for(int i=0; i<arr.length; i++)
@@ -17,7 +17,7 @@ public static  int largest(int[]arr)
   int max = arr[0];
   for(int i=0; i<arr.length; i++)
   {
-    if(nums[i] > max)
+    if(arr[i] > max)
     {
       max = arr[i];
     }
@@ -50,7 +50,7 @@ return out;
 //4e) sum() takes a 2D array of int, and returns the sum of all the individual values in all of the arrays.
 public static  int sum(int[][] arr) {
 int sum = 0;
-for (int i=0; i < matrix.length; i++)
+for (int i=0; i < arr.length; i++)
 {
 sum += sum(arr[i]);
 }
@@ -64,11 +64,14 @@ public static int[] sumCols(int[][] matrix)
   int[] out = new int[matrix[0].length];
   for(int i=0; i< matrix.length; i++)
   {
-    for(int j=0; j< matrix[0].length; j++)
+    for(int j=0; j< out.length; j++)
     {
-      output[col] += matrix[row][col];
-return sumRows;
+      out[j] += matrix[i][j];
+    }
+  }
+return out;
 }
+
 
 //5b) isRowMagic() takes a rectangular 2d array and returns true when each row has the same sum, and false otherwise.
 public static boolean isRowMagic(int[][] matrix) {
@@ -85,16 +88,14 @@ public static boolean isRowMagic(int[][] matrix) {
 }
 //5c) isColMagic()  takes a rectangular 2d array and  returns true when each column has the same sum, and false otherwise.
 public static boolean isColumnMagic(int[][] matrix) {
-boolean isMagic = true;
-int[] sumsofCols = sumCols(matrix);
 for(int i=0; i<matrix[1].length-1; i++)
 {
-  if(sumofCols[i] != sumofCols[i+1])
+  if(ArrayOps.sumCols(matrix)[0]!=ArrayOps.sumCols(matrix)[i])
   {
-    isMagic = false; //as the law says, Innocent until proven GUILTY!
+    return false; //as the law says, Innocent until proven GUILTY!
   }
 }
-return isMagic;
+return true;
 }
 
 
