@@ -33,3 +33,14 @@ public static int[] sumRows(int[][] matrix)
   }
   return out;  // might have to call this function in the main
 }
+
+//4d. largestInRows() takes a nonempty 2D array of int, the inner arrays cannot be empty either, and returns a 1D array of int with each element being the largest element of the individual rows  of the 2D array.
+public static  int[] largestInRows(int[][] matrix)
+{
+int[]out = new int[matrix.length]; //new array
+for(int i=0; i< matrix.length; i++)
+{
+out[i] = largest(matrix[i]);
+}
+return out;
+}
