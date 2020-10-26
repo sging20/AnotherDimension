@@ -1,5 +1,7 @@
+public class ArrayOps{
+
 //4a) sum() takes an array of int, and returns a sum of the individual values in the array.
-public int[] sum(int[] arr)
+public static int[] sum(int[] arr)
 {
   int sum= 0;
   for(int i=0; i<arr.length; i++)
@@ -43,4 +45,20 @@ for(int i=0; i< matrix.length; i++)
 out[i] = largest(matrix[i]);
 }
 return out;
+}
+
+//4e) sum() takes a 2D array of int, and returns the sum of all the individual values in all of the arrays.
+public static  int sum(int[][] arr) {
+int sum = 0;
+for (int i=0; i < matrix.length; i++)
+{
+sum += sum(arr[i]);
+}
+return sum;
+}
+
+
+
+
+
 }
