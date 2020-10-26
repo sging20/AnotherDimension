@@ -71,7 +71,19 @@ int[]switch = int[matrix.length];
   return sumRows(switch);
 }
 
-
+//5b) isRowMagic() takes a rectangular 2d array and returns true when each row has the same sum, and false otherwise.
+public static boolean isRowMagic(int[][] matrix) {
+boolean isMagic = true;
+int[] sumsofCols = sumCols(matrix);
+for(int i=0; i<matrix.length-1; i++)
+{
+  if([i] != [i+1])
+  {
+    isMagic = false; //as the law says, Innocent until proven GUILTY!
+  }
+}
+return isMagic;
+}
 
 
 
