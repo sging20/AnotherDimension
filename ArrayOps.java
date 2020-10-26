@@ -60,15 +60,16 @@ return sum;
 //5a) sumCols takes a 2D array that must be rectangular (all rows have the same length) and returns
 //a 1D array of int with each element being the sum of the individual columns of the 2D array.
 public static int[] sumCols(int[][] matrix)
-int[]switch = int[matrix.length];
+{
+  int[]switch = int[matrix.length];
   for(int i=0; i< matrix.length; i++)
   {
     for(int j=0; j, matrix[1].length; j++)
     {
       switch[j][i] = matrix[i][j];
     }
-  }
   return sumRows(switch);
+}
 }
 
 //5b) isRowMagic() takes a rectangular 2d array and returns true when each row has the same sum, and false otherwise.
@@ -100,8 +101,17 @@ return isMagic;
 }
 
 
-
-
-
+//5d)  isLocationMagic()  takes a rectangular 2d array and returns true when the row and column specified have the same sum.
+public static boolean isLocationMagic(int[][] matrix, int row, int col)
+{
+boolean isMagic = true;
+int[] sumofRows = sumRows(matrix);
+int[] sumofCols= sumCols(matrix);
+  if(sumofRows[row] != sumofCols[col])
+  {
+    isMagic= false;
+  }
+  return isMagic;
+}
 
 }
